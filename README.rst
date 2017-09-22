@@ -20,6 +20,23 @@ Alternatively, one can install the last major release with the command
 
   python -m pip install openfermionprojectq
 
+Authors
+-------
+
+`Ryan Babbush <http://ryanbabbush.com>`__ (Google),
+`Jarrod McClean <http://jarrodmcclean.com>`__ (Google),
+Ian Kivlichan (Harvard),
+Damian Steiger (ETH Zurich),
+Wei Sun (Google),
+Craig Gidney (Google),
+Thomas Haner (ETH Zurich),
+Hannah Sim (Harvard),
+Vojtech Havlicek (Oxford),
+Kanav Setia (Dartmouth),
+Nicholas Rubin (Rigetti),
+Matthew Neeley (Google) and
+Dave Bacon (Google).
+
 Questions?
 ----------
 
