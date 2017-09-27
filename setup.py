@@ -33,6 +33,6 @@ setup(
     description=('A plugin allowing OpenFermion to interaface with ProjectQ.'),
     long_description=long_description,
     install_requires=requirements,
-    license='Apache 2'
+    license='Apache 2',
     packages=find_packages()
 )
