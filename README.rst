@@ -7,6 +7,9 @@ OpenFermion-ProjectQ
 .. image:: https://coveralls.io/repos/github/quantumlib/OpenFermion-ProjectQ/badge.svg?branch=develop
     :target: https://coveralls.io/github/quantumlib/OpenFermion-ProjectQ?branch=develop
 
+.. image:: https://badge.fury.io/py/openfermionprojectq.svg
+    :target: https://badge.fury.io/py/openfermionprojectq
+
 `OpenFermion <http://openfermion.org>`_ is an open source package for compiling and analyzing quantum algorithms that simulate fermionic systems.
 This plugin library allows the circuit simulation and compilation package `ProjectQ <https://projectq.ch>`_ to interface with OpenFermion.
 
