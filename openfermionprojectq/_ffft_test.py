@@ -239,10 +239,8 @@ class FSwapAdjacentTest(unittest.TestCase):
         self.eng = MainEngine()
         self.reg = self.eng.allocate_qureg(3)
 
-
     def tearDown(self):
         All(Measure) | self.reg
-
 
     def test_fswap_adjacent_identity(self):
         fswap_adjacent(self.reg, 0)
