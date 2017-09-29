@@ -426,7 +426,7 @@ def _two_gate_filter(self, cmd):
             one- and two- qubit gates.
 
     """
-    if ((not isinstance(cmd.gate, TimeEvolution)) and
+    if ((not isinstance(cmd.gate, projectq.ops.TimeEvolution)) and
         (len(cmd.qubits[0]) <= 2 or
             isinstance(cmd.gate, projectq.ops.ClassicalInstructionGate))):
         return True

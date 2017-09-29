@@ -73,19 +73,16 @@ def ordered_wavefunction(engine, indices_to_evaluate=None):
 
 class OrderedWavefunctionTest(unittest.TestCase):
 
-    @unittest.skip('simulator problem')
     def setUp(self):
         self.eng1 = MainEngine()
         self.reg1 = self.eng1.allocate_qubit()
         self.eng3 = MainEngine()
         self.reg3 = self.eng3.allocate_qureg(3)
 
-    @unittest.skip('simulator problem')
     def tearDown(self):
         All(Measure) | self.reg1
         All(Measure) | self.reg3
 
-    @unittest.skip('simulator problem')
     def test_correct_phase_after_reordering_1qubit(self):
         H | self.reg1
         Rz(0.03) | self.reg1
@@ -94,7 +91,6 @@ class OrderedWavefunctionTest(unittest.TestCase):
         angle1 = numpy.angle(ordered_wavefunction(self.eng1)[1])
         self.assertAlmostEqual(angle1 - angle0, 0.03)
 
-    @unittest.skip('simulator problem')
     def test_correct_phase_after_reordering_multiple_qubits(self):
         All(H) | self.reg3
         Rz(0.07) | self.reg3[1]
@@ -108,7 +104,6 @@ class OrderedWavefunctionTest(unittest.TestCase):
                                numpy.angle(wavefunction[0]),
                                0.07)
 
-    @unittest.skip('simulator problem')
     def test_correct_resorting(self):
         """For this circuit:
         000 -> 0
@@ -139,7 +134,6 @@ class OrderedWavefunctionTest(unittest.TestCase):
             numpy.array(ordered_wavefunction(self.eng3)),
             expected))
 
-    @unittest.skip('simulator problem')
     def test_correct_resorting_selective(self):
         """Same circuit as non-selective test:
         000 -> 0
@@ -172,16 +166,13 @@ class OrderedWavefunctionTest(unittest.TestCase):
 
 class FSwapTest(unittest.TestCase):
 
-    @unittest.skip('simulator problem')
     def setUp(self):
         self.eng = MainEngine()
         self.reg = self.eng.allocate_qureg(3)
 
-    @unittest.skip('simulator problem')
     def tearDown(self):
         All(Measure) | self.reg
 
-    @unittest.skip('simulator problem')
     def test_fswap_identity(self):
         fswap(self.reg, 0, 1)
         self.eng.flush()
@@ -191,7 +182,6 @@ class FSwapTest(unittest.TestCase):
         self.assertTrue(numpy.allclose(numpy.abs(ordered_wvfn),
                                        numpy.abs(expected)))
 
-    @unittest.skip('simulator problem')
     def test_fswap_100(self):
         X | self.reg[0]
         fswap(self.reg, 0, 1)
@@ -202,7 +192,6 @@ class FSwapTest(unittest.TestCase):
         self.assertTrue(numpy.allclose(numpy.abs(ordered_wvfn),
                                        numpy.abs(expected)))
 
-    @unittest.skip('simulator problem')
     def test_fswap_010(self):
         X | self.reg[1]
         fswap(self.reg, 0, 1)
@@ -213,7 +202,6 @@ class FSwapTest(unittest.TestCase):
         self.assertTrue(numpy.allclose(numpy.abs(ordered_wvfn),
                                        numpy.abs(expected)))
 
-    @unittest.skip('simulator problem')
     def test_fswap_001(self):
         X | self.reg[2]
         fswap(self.reg, 0, 1)
@@ -224,7 +212,6 @@ class FSwapTest(unittest.TestCase):
         self.assertTrue(numpy.allclose(numpy.abs(ordered_wvfn),
                                        numpy.abs(expected)))
 
-    @unittest.skip('simulator problem')
     def test_fswap_superposition(self):
         All(H) | self.reg
         fswap(self.reg, 0, 1)
@@ -236,7 +223,6 @@ class FSwapTest(unittest.TestCase):
         expected[7] *= -1  # bitstring 111 gets sign-flipped by fermionic swap
         self.assertTrue(numpy.allclose(ordered_wvfn, expected * -1j))
 
-    @unittest.skip('simulator problem')
     def test_fswap_same_modes(self):
         All(H) | self.reg
         fswap(self.reg, 1, 1)  # expect identity to be applied because of this
@@ -249,16 +235,15 @@ class FSwapTest(unittest.TestCase):
 
 class FSwapAdjacentTest(unittest.TestCase):
 
-    @unittest.skip('simulator problem')
     def setUp(self):
         self.eng = MainEngine()
         self.reg = self.eng.allocate_qureg(3)
 
-    @unittest.skip('simulator problem')
+
     def tearDown(self):
         All(Measure) | self.reg
 
-    @unittest.skip('simulator problem')
+
     def test_fswap_adjacent_identity(self):
         fswap_adjacent(self.reg, 0)
         self.eng.flush()
@@ -268,7 +253,6 @@ class FSwapAdjacentTest(unittest.TestCase):
         self.assertTrue(numpy.allclose(numpy.abs(ordered_wvfn),
                                        numpy.abs(expected)))
 
-    @unittest.skip('simulator problem')
     def test_fswap_adjacent_100(self):
         X | self.reg[0]
         fswap_adjacent(self.reg, 0)
@@ -279,7 +263,6 @@ class FSwapAdjacentTest(unittest.TestCase):
         self.assertTrue(numpy.allclose(numpy.abs(ordered_wvfn),
                                        numpy.abs(expected)))
 
-    @unittest.skip('simulator problem')
     def test_fswap_adjacent_010(self):
         X | self.reg[1]
         fswap_adjacent(self.reg, 0)
@@ -290,7 +273,6 @@ class FSwapAdjacentTest(unittest.TestCase):
         self.assertTrue(numpy.allclose(numpy.abs(ordered_wvfn),
                                        numpy.abs(expected)))
 
-    @unittest.skip('simulator problem')
     def test_fswap_adjacent_001(self):
         X | self.reg[2]
         fswap_adjacent(self.reg, 0)
@@ -301,7 +283,6 @@ class FSwapAdjacentTest(unittest.TestCase):
         self.assertTrue(numpy.allclose(numpy.abs(ordered_wvfn),
                                        numpy.abs(expected)))
 
-    @unittest.skip('simulator problem')
     def test_fswap_adjacent_superposition(self):
         All(H) | self.reg
         fswap_adjacent(self.reg, 0)
@@ -316,12 +297,10 @@ class FSwapAdjacentTest(unittest.TestCase):
 
 class ApplyPhaseTest(unittest.TestCase):
 
-    @unittest.skip('simulator problem')
     def setUp(self):
         self.eng = MainEngine()
         self.reg = self.eng.allocate_qureg(3)
 
-    @unittest.skip('simulator problem')
     def test_apply_phase_1qubit(self):
         eng = MainEngine()
         reg = eng.allocate_qubit()
@@ -350,21 +329,18 @@ class ApplyPhaseTest(unittest.TestCase):
 
 class FFFTNModeIntegrationTest(unittest.TestCase):
 
-    @unittest.skip('simulator problem')
     def test_ffft_0mode_error(self):
         eng = MainEngine()
         reg = eng.allocate_qureg(1)
         with self.assertRaises(ValueError):
             ffft(eng, reg, 0)
 
-    @unittest.skip('simulator problem')
     def test_ffft_1mode_error(self):
         eng = MainEngine()
         reg = eng.allocate_qureg(1)
         with self.assertRaises(ValueError):
             ffft(eng, reg, 1)
 
-    @unittest.skip('simulator problem')
     def test_ffft_2modes_properly_applied(self):
         eng_ft_0 = MainEngine()
         reg_ft_0 = eng_ft_0.allocate_qureg(2)
@@ -384,7 +360,6 @@ class FFFTNModeIntegrationTest(unittest.TestCase):
             ordered_wavefunction(eng_ffft_recursive),
             ordered_wavefunction(eng_ft_0)))
 
-    @unittest.skip('simulator problem')
     def test_2mode_ffft_correct_frequencies(self):
         n_qubits = 2
         frequencies_seen = numpy.zeros(n_qubits)
@@ -419,7 +394,6 @@ class FFFTNModeIntegrationTest(unittest.TestCase):
 
         self.assertTrue(numpy.allclose(frequencies_seen, expected))
 
-    @unittest.skip('simulator problem')
     def test_4mode_ffft_correct_frequencies(self):
         n_qubits = 4
         frequencies_seen = numpy.zeros(n_qubits)
@@ -460,7 +434,6 @@ class FFFTNModeIntegrationTest(unittest.TestCase):
 
         self.assertTrue(numpy.allclose(frequencies_seen, expected))
 
-    @unittest.skip('simulator problem')
     def test_8mode_ffft_correct_frequencies(self):
         n_qubits = 8
         frequencies_seen = numpy.zeros(n_qubits)
@@ -514,17 +487,15 @@ class SwapAdjacentFermionicModesTest(unittest.TestCase):
             FermionOperator('4^ 3^ 4 3', -1.0)))
 
 
+@unittest.skip('simulator problem')
 class FFFTPlaneWaveIntegrationTest(unittest.TestCase):
 
-    @unittest.skip('simulator problem')
     def setUp(self):
         random.seed(17)
 
-    @unittest.skip('simulator problem')
     def tearDown(self):
         All(Measure) | self.reg
 
-    @unittest.skip('simulator problem')
     def test_4mode_ffft_with_external_swaps_all_logical_states(self):
         n_qubits = 4
 
@@ -567,7 +538,6 @@ class FFFTPlaneWaveIntegrationTest(unittest.TestCase):
 
             self.assertTrue(numpy.allclose(wvfn, converted_wvfn))
 
-    @unittest.skip('simulator problem')
     def test_8mode_ffft_with_external_swaps_on_single_logical_state(self):
         n_qubits = 8
         grid = Grid(dimensions=1, length=n_qubits, scale=1.0)
@@ -613,7 +583,6 @@ class FFFTPlaneWaveIntegrationTest(unittest.TestCase):
 
         self.assertTrue(numpy.allclose(wvfn, converted_wvfn))
 
-    @unittest.skip('simulator problem')
     def test_4mode_ffft_with_external_swaps_equal_expectation_values(self):
         n_qubits = 4
 
@@ -686,7 +655,6 @@ class FFFTPlaneWaveIntegrationTest(unittest.TestCase):
         self.assertAlmostEqual(plane_wave_expectation_value,
                                dual_basis_expectation_value)
 
-    @unittest.skip('simulator problem')
     def test_8mode_ffft_with_external_swaps_equal_expectation_values(self):
         n_qubits = 8
 
@@ -762,7 +730,6 @@ class FFFTPlaneWaveIntegrationTest(unittest.TestCase):
         self.assertAlmostEqual(plane_wave_expectation_value,
                                dual_basis_expectation_value)
 
-    @unittest.skip('simulator problem')
     def test_ffft_2d_4x4_logical_state(self):
         system_size = 4
         grid = Grid(dimensions=2, length=system_size, scale=1.0)
@@ -790,7 +757,6 @@ class FFFTPlaneWaveIntegrationTest(unittest.TestCase):
 
         self.assertTrue(numpy.allclose(engine_wvfn, operator_wvfn))
 
-    @unittest.skip('simulator problem')
     def test_ffft_2d_4x4_equal_expectation_values(self):
         system_size = 4
         n_qubits = 16
