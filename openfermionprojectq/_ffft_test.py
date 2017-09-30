@@ -310,7 +310,6 @@ class ApplyPhaseTest(unittest.TestCase):
                                0.06)
         Measure | reg
 
-    @unittest.skip('simulator problem')
     def test_apply_phase_multiple_qubits(self):
         All(H) | self.reg
         apply_phase(self.reg, 1, 0.07)
@@ -485,7 +484,6 @@ class SwapAdjacentFermionicModesTest(unittest.TestCase):
             FermionOperator('4^ 3^ 4 3', -1.0)))
 
 
-@unittest.skip('simulator problem')
 class FFFTPlaneWaveIntegrationTest(unittest.TestCase):
 
     def setUp(self):
