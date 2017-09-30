@@ -299,6 +299,9 @@ class ApplyPhaseTest(unittest.TestCase):
         self.eng = MainEngine()
         self.reg = self.eng.allocate_qureg(3)
 
+    def tearDown(self):
+        All(Measure) | self.reg
+
     def test_apply_phase_1qubit(self):
         eng = MainEngine()
         reg = eng.allocate_qubit()
@@ -503,7 +506,6 @@ class FFFTPlaneWaveIntegrationTest(unittest.TestCase):
             Ph(3 * numpy.pi / 4) | register[0]
             eng.flush()
             wvfn = ordered_wavefunction(eng)
-            All(Measure) | register
 
             fermion_operator = prepare_integer_fermion_operator(i)
 
@@ -529,6 +531,8 @@ class FFFTPlaneWaveIntegrationTest(unittest.TestCase):
                 index = sum(2 ** site[0] for site in term)
                 converted_wvfn[index] = ffft_result.terms[term]
 
+            All(Measure) | register
+
             self.assertTrue(numpy.allclose(wvfn, converted_wvfn))
 
     def test_8mode_ffft_with_external_swaps_on_single_logical_state(self):
@@ -546,7 +550,6 @@ class FFFTPlaneWaveIntegrationTest(unittest.TestCase):
         Ph(3 * numpy.pi / 4) | register[0]
         eng.flush()
         wvfn = ordered_wavefunction(eng)
-        All(Measure) | register
 
         fermion_operator = prepare_integer_fermion_operator(state_index)
 
@@ -573,6 +576,8 @@ class FFFTPlaneWaveIntegrationTest(unittest.TestCase):
         for term in ffft_result.terms:
             index = sum(2 ** site[0] for site in term)
             converted_wvfn[index] = ffft_result.terms[term]
+
+        All(Measure) | register
 
         self.assertTrue(numpy.allclose(wvfn, converted_wvfn))
 
