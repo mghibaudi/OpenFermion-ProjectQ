@@ -78,7 +78,6 @@ class OrderedWavefunctionTest(unittest.TestCase):
         self.reg1 = self.eng1.allocate_qubit()
         self.eng3 = MainEngine()
         self.reg3 = self.eng3.allocate_qureg(3)
-        print self._testMethodName
 
     def tearDown(self):
         All(Measure) | self.reg1
@@ -170,7 +169,6 @@ class FSwapTest(unittest.TestCase):
     def setUp(self):
         self.eng = MainEngine()
         self.reg = self.eng.allocate_qureg(3)
-        print self._testMethodName
 
     def tearDown(self):
         All(Measure) | self.reg
@@ -240,7 +238,6 @@ class FSwapAdjacentTest(unittest.TestCase):
     def setUp(self):
         self.eng = MainEngine()
         self.reg = self.eng.allocate_qureg(3)
-        print self._testMethodName
 
     def tearDown(self):
         All(Measure) | self.reg
@@ -301,7 +298,6 @@ class ApplyPhaseTest(unittest.TestCase):
     def setUp(self):
         self.eng = MainEngine()
         self.reg = self.eng.allocate_qureg(3)
-        print self._testMethodName
 
     def test_apply_phase_1qubit(self):
         eng = MainEngine()
@@ -329,9 +325,6 @@ class ApplyPhaseTest(unittest.TestCase):
 
 
 class FFFTNModeIntegrationTest(unittest.TestCase):
-
-    def setUp(self):
-        print self._testMethodName
 
     def test_ffft_0mode_error(self):
         eng = MainEngine()
@@ -495,10 +488,6 @@ class FFFTPlaneWaveIntegrationTest(unittest.TestCase):
 
     def setUp(self):
         random.seed(17)
-        print self._testMethodName
-
-    def tearDown(self):
-        All(Measure) | self.reg
 
     def test_4mode_ffft_with_external_swaps_all_logical_states(self):
         n_qubits = 4
