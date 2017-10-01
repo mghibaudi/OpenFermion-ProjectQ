@@ -211,8 +211,7 @@ def ffft_2d(engine, register, system_size):
     for i in range(system_size):
         ffft(engine, register[system_size*i: system_size*i + system_size],
              system_size)
-        Ph(3 * numpy.pi / 4) | register[system_size*i:
-                                        system_size*i + system_size]
+        Ph(3 * numpy.pi / 4) | register[0]
 
     # To apply the FFFT along the second axis, we must fermionically
     # swap qubits into the correct positions. In 2D this is equivalent
@@ -232,8 +231,7 @@ def ffft_2d(engine, register, system_size):
     for i in range(system_size):
         ffft(engine, register[system_size*i: system_size*i + system_size],
              system_size)
-        Ph(3 * numpy.pi / 4) | register[system_size*i:
-                                        system_size*i + system_size]
+        Ph(3 * numpy.pi / 4) | register[0]
 
     # Undo the fermionic swap network to restore the original ordering.
     for swap in all_swaps[::-1]:

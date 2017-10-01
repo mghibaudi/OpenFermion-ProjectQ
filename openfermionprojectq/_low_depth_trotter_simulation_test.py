@@ -70,7 +70,6 @@ def dual_basis_hamiltonian(n_dimensions, system_size,
     return normal_ordered(hamiltonian)
 
 
-@unittest.skip('simulator problem')
 class FourQubitSecondOrderTrotterTest(unittest.TestCase):
 
     def setUp(self):
@@ -425,7 +424,6 @@ class FourQubitSecondOrderTrotterTest(unittest.TestCase):
                 self.register, FermionOperator(), trotter_steps=0)
 
 
-@unittest.skip('simulator problem')
 class FourQubitFirstOrderEquivalenceWithSecondOrderTest(unittest.TestCase):
 
     def setUp(self):
@@ -479,7 +477,6 @@ class FourQubitFirstOrderEquivalenceWithSecondOrderTest(unittest.TestCase):
                                        expected.T))
 
 
-@unittest.skip('simulator problem')
 class HighTrotterNumberIntegrationTest(unittest.TestCase):
 
     def setUp(self):

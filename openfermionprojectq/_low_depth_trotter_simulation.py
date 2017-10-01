@@ -130,7 +130,7 @@ def simulation_gate_trotter_step(register, hamiltonian, input_ordering=None,
             # The single-Z rotation angle is the opposite of the ZZ angle.
             Rz(-zz_angle) | register[i]
             Rz(-zz_angle) | register[i + 1]
-            Ph(-zz_angle / 2.) | register
+            Ph(-zz_angle / 2.) | register[0]
 
             num_operator_left = ((input_ordering[i], 1),
                                  (input_ordering[i], 0))
@@ -147,7 +147,7 @@ def simulation_gate_trotter_step(register, hamiltonian, input_ordering=None,
                 # After special_F_adjacent, qubits i and i+1 have swapped;
                 # the ith rotation must thus be applied to qubit i+1.
                 Rz(z_angle) | register[i + 1]
-                Ph(z_angle / 2.) | register
+                Ph(z_angle / 2.) | register[0]
 
             num_operator_right = ((input_ordering[i+1], 1),
                                   (input_ordering[i+1], 0))
@@ -164,7 +164,7 @@ def simulation_gate_trotter_step(register, hamiltonian, input_ordering=None,
                 # After special_F_adjacent, qubits i and i+1 have swapped;
                 # the (i+1)th rotation must thus be applied to qubit i.
                 Rz(z_angle) | register[i]
-                Ph(z_angle / 2.) | register
+                Ph(z_angle / 2.) | register[0]
 
             # Finally, swap the two modes in input_ordering.
             input_ordering[i], input_ordering[i + 1] = (input_ordering[i + 1],
