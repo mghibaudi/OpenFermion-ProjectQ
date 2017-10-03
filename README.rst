@@ -1,10 +1,10 @@
 OpenFermion-ProjectQ
 ====================
 
-.. image:: https://travis-ci.org/quantumlib/OpenFermion-ProjectQ.svg?branch=develop
+.. image:: https://travis-ci.org/quantumlib/OpenFermion-ProjectQ.svg?branch=master
     :target: https://travis-ci.org/quantumlib/OpenFermion-ProjectQ
 
-.. image:: https://coveralls.io/repos/github/quantumlib/OpenFermion-ProjectQ/badge.svg?branch=develop
+.. image:: https://coveralls.io/repos/github/quantumlib/OpenFermion-ProjectQ/badge.svg?branch=master
     :target: https://coveralls.io/github/quantumlib/OpenFermion-ProjectQ?branch=develop
 
 .. image:: https://badge.fury.io/py/openfermionprojectq.svg
@@ -17,17 +17,17 @@ Getting started
 ---------------
 
 To start using OpenFermion-ProjectQ, first install `OpenFermion <http://openfermion.org>`_ and `ProjectQ <https://projectq.ch>`_.
-Then, clone this git repo, change directory to the top level folder and run:
+Then, clone `this <http://github.com/quantumlib/OpenFermion-ProjectQ>`__ git repo, change directory to the top level folder and run:
 
 .. code-block:: bash
 
   python -m pip install -e .
 
-Alternatively, one can install the last major release with the command
+Alternatively, if using OpenFermion-ProjectQ as a library, one can install the last official PyPI release with:
 
 .. code-block:: bash
 
-  python -m pip install openfermionprojectq
+  python -m pip install --pre --user openfermionprojectq
 
 Authors
 -------
