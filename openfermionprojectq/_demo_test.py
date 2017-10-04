@@ -23,7 +23,7 @@ class ExampleTest(unittest.TestCase):
     def setUp(self):
         this_directory = os.getcwd()
         string_length = len(this_directory)
-        directory = this_directory[:(string_length - 19)] + 'examples/'
+        directory = this_directory[:(string_length - 20)] + 'examples/'
         demo_name = 'openfermionprojectq_demo.ipynb'
         self.path = directory + demo_name
 
