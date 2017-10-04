@@ -21,9 +21,9 @@ import unittest
 class ExampleTest(unittest.TestCase):
 
     def setUp(self):
-        self.directory = '../examples/'
-        self.demo_name = 'openfermionprojectq_demo.ipynb'
-        self.path = self.directory + self.demo_name
+        directory = '../examples/'
+        demo_name = 'openfermionprojectq_demo.ipynb'
+        self.path = directory + demo_name
 
     def test_demo(self):
         """Execute a notebook via nbconvert and collect output."""
