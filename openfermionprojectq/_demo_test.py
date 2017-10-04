@@ -21,7 +21,9 @@ import unittest
 class ExampleTest(unittest.TestCase):
 
     def setUp(self):
-        directory = '../examples/'
+        this_directory = os.getcwd()
+        string_length = len(this_directory)
+        directory = this_directory[:(string_length - 19)] + 'examples/'
         demo_name = 'openfermionprojectq_demo.ipynb'
         self.path = directory + demo_name
 
