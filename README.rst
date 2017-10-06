@@ -16,8 +16,8 @@ This plugin library allows the circuit simulation and compilation package `Proje
 Getting started
 ---------------
 
-To start using OpenFermion-ProjectQ, first install `OpenFermion <http://openfermion.org>`_ and `ProjectQ <https://projectq.ch>`_.
-Then, clone `this <http://github.com/quantumlib/OpenFermion-ProjectQ>`__ git repo, change directory to the top level folder and run:
+To install the latest development versions of OpenFermion, ProjectQ and OpenFermion-ProjectQ,
+clone `this <http://github.com/quantumlib/OpenFermion-ProjectQ>`__ git repo, change directory to the top level folder and run:
 
 .. code-block:: bash
 
