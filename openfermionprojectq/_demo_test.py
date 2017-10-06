@@ -43,7 +43,7 @@ class ExampleTest(unittest.TestCase):
                         '--to',
                         'notebook',
                         '--execute',
-                        '--ExecutePreprocessor.timeout=60',
+                        '--ExecutePreprocessor.timeout=600',
                         '--ExecutePreprocessor.kernel_name=python{}'.format(
                             version),
                         '--output',

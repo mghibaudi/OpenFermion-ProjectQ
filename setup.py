@@ -14,7 +14,7 @@ import os
 
 from setuptools import setup, find_packages
 
-# This reads the __version__ variable from openfermion_projectq/_version.py
+# This reads the __version__ variable from openfermionprojectq/_version.py
 exec(open('openfermionprojectq/_version.py').read())
 
 # Readme file as long_description:
