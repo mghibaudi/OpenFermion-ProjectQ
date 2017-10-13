@@ -29,6 +29,8 @@ Alternatively, if using OpenFermion-ProjectQ as a library, one can install the l
 
   python -m pip install --pre --user openfermionprojectq
 
+Also be sure to take a look at the ipython notebook demos in the examples folder of this repository.
+
 How to contribute
 -----------------
 
