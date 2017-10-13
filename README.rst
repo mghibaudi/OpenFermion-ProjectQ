@@ -59,15 +59,8 @@ Authors
 `Jarrod McClean <http://jarrodmcclean.com>`__ (Google),
 `Ian Kivlichan <http://aspuru.chem.harvard.edu/ian-kivlichan/>`__ (Harvard),
 Damian Steiger (ETH Zurich),
-Wei Sun (Google),
-Craig Gidney (Google),
-Thomas Haner (ETH Zurich),
-Hannah Sim (Harvard),
-Vojtech Havlicek (Oxford),
-Kanav Setia (Dartmouth),
-Nicholas Rubin (Rigetti),
-Matthew Neeley (Google) and
-Dave Bacon (Google).
+Thomas Haener (ETH Zurich) and
+Dave Bacon (Google)
 
 Questions?
 ----------
