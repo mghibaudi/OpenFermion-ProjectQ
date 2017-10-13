@@ -1,19 +1,12 @@
 Copyright 2017 The OpenFermion Developers.
-OpenFermion (www.openfermion.org) was developed by:
+OpenFermion-ProjectQ (www.openfermion.org) was developed by:
 Ryan Babbush (Google)
 Jarrod McClean (Google)
 Ian Kivlichan (Harvard)
 Damian Steiger (ETH Zurich)
-Wei Sun (Google)
-Craig Gidney (Google)
 Thomas Haner (ETH Zurich)
-Hannah Sim (Harvard)
-Vojtech Havlicek (Oxford)
-Kanav Setia (Dartmouth)
-Nicholas Rubin (Rigetti)
-Matthew Neeley (Google)
 Dave Bacon (Google)
-OpenFermion developed as a fork of FermiLib with some code from ProjectQ.
+OpenFermion-ProjectQ developed as a fork of FermiLib with some code from ProjectQ.
 Code was forked from development branches of FermiLib and ProjectQ on 9/1/2017.
 The original notices from FermiLib and ProjectQ are reproduced below.
 
@@ -23,7 +16,7 @@ Ryan Babbush (Google)
 Jarrod McClean (LBNL*)
 Damian Steiger (ETH Zurich)
 Ian Kivlichan (Harvard)
-Thomas Haner (ETH)
+Thomas Haener (ETH Zurich)
 Vojtech Havlicek (Oxford)
 Matthew Neeley (Google)
 Wei Sun (Google)

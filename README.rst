@@ -29,6 +29,8 @@ Alternatively, if using OpenFermion-ProjectQ as a library, one can install the l
 
   python -m pip install --pre --user openfermionprojectq
 
+Also be sure to take a look at the ipython notebook demos in the examples folder of this repository.
+
 How to contribute
 -----------------
 
@@ -59,14 +61,7 @@ Authors
 `Jarrod McClean <http://jarrodmcclean.com>`__ (Google),
 `Ian Kivlichan <http://aspuru.chem.harvard.edu/ian-kivlichan/>`__ (Harvard),
 Damian Steiger (ETH Zurich),
-Wei Sun (Google),
-Craig Gidney (Google),
-Thomas Haner (ETH Zurich),
-Hannah Sim (Harvard),
-Vojtech Havlicek (Oxford),
-Kanav Setia (Dartmouth),
-Nicholas Rubin (Rigetti),
-Matthew Neeley (Google) and
+Thomas Haener (ETH Zurich) and
 Dave Bacon (Google).
 
 Questions?
