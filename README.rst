@@ -60,7 +60,7 @@ Authors
 `Ian Kivlichan <http://aspuru.chem.harvard.edu/ian-kivlichan/>`__ (Harvard),
 Damian Steiger (ETH Zurich),
 Thomas Haener (ETH Zurich) and
-Dave Bacon (Google)
+Dave Bacon (Google).
 
 Questions?
 ----------
