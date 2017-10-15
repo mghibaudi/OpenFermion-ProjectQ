@@ -10,29 +10,41 @@ OpenFermion-ProjectQ
 .. image:: https://badge.fury.io/py/openfermionprojectq.svg
     :target: https://badge.fury.io/py/openfermionprojectq
 
+.. image:: https://img.shields.io/badge/python-2.7%2C%203.4%2C%203.5%2C%203.6-brightgreen.svg
+
 `OpenFermion <http://openfermion.org>`_ is an open source package for compiling and analyzing quantum algorithms that simulate fermionic systems.
 This plugin library allows the circuit simulation and compilation package `ProjectQ <https://projectq.ch>`_ to interface with OpenFermion.
 
 Getting started
----------------
+===============
 
-To install the latest development versions of OpenFermion, ProjectQ and OpenFermion-ProjectQ,
-clone `this <http://github.com/quantumlib/OpenFermion-ProjectQ>`__ git repo, change directory to the top level folder and run:
+Installing OpenFermion-ProjectQ requires pip. Make sure that you are using an up-to-date version of it.
+Once installation is complete, be sure to take a look at the
+`ipython notebook demo <https://github.com/quantumlib/OpenFermion-ProjectQ/blob/master/examples/openfermionprojectq_demo.ipynb>`__
+as well as our detailed `code documentation <http://openfermionprojectq.readthedocs.io/en/latest/openfermionprojectq.html>`__.
+
+Developer install
+-----------------
+
+To install the latest version of OpenFermion, ProjectQ and OpenFermion-ProjectQ in development mode:
 
 .. code-block:: bash
 
+  git clone https://github.com/quantumlib/OpenFermion-ProjectQ
+  cd OpenFermion-OpenFermion-ProjectQ
   python -m pip install -e .
 
-Alternatively, if using OpenFermion-ProjectQ as a library, one can install the last official PyPI release with:
+Library install
+------------
+
+To install the latest PyPI release as a library (in user mode):
 
 .. code-block:: bash
 
   python -m pip install --pre --user openfermionprojectq
 
-Also be sure to take a look at the ipython notebook demos in the examples folder of this repository.
-
 How to contribute
------------------
+=================
 
 We'd love to accept your contributions and patches to OpenFermion-ProjectQ.
 There are a few guidelines you need to follow.
@@ -55,22 +67,22 @@ the corresponding `linter <https://pypi.python.org/pypi/pep8>`_ to check for it.
 Code should always come with documentation.
 
 Authors
--------
+=======
 
 `Ryan Babbush <http://ryanbabbush.com>`__ (Google),
 `Jarrod McClean <http://jarrodmcclean.com>`__ (Google),
 `Ian Kivlichan <http://aspuru.chem.harvard.edu/ian-kivlichan/>`__ (Harvard),
-Damian Steiger (ETH Zurich),
-Thomas Haener (ETH Zurich) and
-Dave Bacon (Google).
+`Damian Steiger <https://github.com/damiansteiger>`__ (ETH Zurich),
+`Thomas Haener <https://github.com/thomashaener>`__ (ETH Zurich) and
+`Dave Bacon <https://github.com/dabacon>`__ (Google).
 
 Questions?
-----------
+==========
 
 If you have any other questions, please contact help@openfermion.org.
 
 Disclaimer
-----------
+==========
 
 Copyright 2017 The OpenFermion Developers.
 This is not an official Google product.
