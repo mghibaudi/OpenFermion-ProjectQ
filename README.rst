@@ -1,4 +1,3 @@
-====================
 OpenFermion-ProjectQ
 ====================
 
@@ -27,18 +26,18 @@ as well as our detailed `code documentation <http://openfermionprojectq.readthed
 Developer install
 -----------------
 
-To install the latest version of OpenFermion, ProjectQ and OpenFermion-ProjectQ in development mode:
+To install the latest versions of OpenFermion, ProjectQ and OpenFermion-ProjectQ (in development mode):
 
 .. code-block:: bash
 
   git clone https://github.com/quantumlib/OpenFermion-ProjectQ
-  cd OpenFermion-OpenFermion-ProjectQ
+  cd OpenFermion-ProjectQ
   python -m pip install -e .
 
 Library install
 ------------
 
-To install the latest PyPI release as a library (in user mode):
+To install the latest PyPI releases as libraries (in user mode):
 
 .. code-block:: bash
 
