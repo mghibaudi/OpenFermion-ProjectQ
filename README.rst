@@ -7,8 +7,8 @@ OpenFermion-ProjectQ
 .. image:: https://coveralls.io/repos/github/quantumlib/OpenFermion-ProjectQ/badge.svg?branch=master
     :target: https://coveralls.io/github/quantumlib/OpenFermion-ProjectQ?branch=develop
 
-.. image:: https://readthedocs.org/projects/openfermion/badge/?version=latest
-    :target: http://openfermion.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/openfermionprojectq/badge/?version=latest
+    :target: http://openfermion-projectq.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
 
 .. image:: https://badge.fury.io/py/openfermionprojectq.svg
