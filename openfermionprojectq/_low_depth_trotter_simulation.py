@@ -5,6 +5,7 @@ import numpy
 
 from openfermionprojectq._parallel_bubble_sort import (
     index_of_position_in_1d_array, parallel_bubble_sort)
+
 from openfermion.ops import FermionOperator
 from openfermion.transforms import jordan_wigner
 from openfermion.utils import count_qubits

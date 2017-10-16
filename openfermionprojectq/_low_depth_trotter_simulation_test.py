@@ -9,9 +9,11 @@ import projectq
 from scipy.sparse.linalg import expm
 
 from openfermionprojectq import _low_depth_trotter_simulation
+
+from openfermion.hamiltonians import plane_wave_hamiltonian
 from openfermion.ops import FermionOperator, normal_ordered
 from openfermion.transforms import get_sparse_operator
-from openfermion.utils import Grid, plane_wave_hamiltonian
+from openfermion.utils import Grid
 
 
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
