@@ -22,12 +22,12 @@ import os
 import unittest
 
 import openfermion
-from openfermion.config import *
+from openfermion.config import THIS_DIRECTORY
+from openfermion.hamiltonians import MolecularData
 from openfermion.ops import *
-import openfermion.ops
 from openfermion.transforms import *
 from openfermion.utils import *
-import openfermion.utils
+
 from openfermionprojectq import TimeEvolution
 from openfermionprojectq._graph import (Graph, Node)
 from openfermionprojectq._unitary_cc import *
@@ -45,7 +45,7 @@ class UnitaryCC(unittest.TestCase):
         double_amplitudes = randn(*(test_orbitals,) * 4)
 
         generator = uccsd_operator(single_amplitudes, double_amplitudes)
-        conj_generator = openfermion.ops.hermitian_conjugated(generator)
+        conj_generator = hermitian_conjugated(generator)
 
         self.assertTrue(generator.isclose(-1. * conj_generator))
 
@@ -63,7 +63,7 @@ class UnitaryCC(unittest.TestCase):
                                            test_orbitals,
                                            test_electrons)
 
-        conj_generator = openfermion.ops.hermitian_conjugated(generator)
+        conj_generator = hermitian_conjugated(generator)
 
         self.assertTrue(generator.isclose(-1. * conj_generator))
 
