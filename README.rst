@@ -21,7 +21,7 @@ Getting started
 Installing OpenFermion-ProjectQ requires pip. Make sure that you are using an up-to-date version of it.
 Once installation is complete, be sure to take a look at the
 `ipython notebook demo <https://github.com/quantumlib/OpenFermion-ProjectQ/blob/master/examples/openfermionprojectq_demo.ipynb>`__
-as well as our detailed `code documentation <http://openfermionprojectq.readthedocs.io/en/latest/openfermionprojectq.html>`__.
+as well as our detailed `code documentation <http://openfermion-projectq.readthedocs.io/en/latest/openfermionprojectq.html>`__.
 
 Developer install
 -----------------
