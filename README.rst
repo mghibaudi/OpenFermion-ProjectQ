@@ -40,7 +40,7 @@ To install the latest versions of OpenFermion, ProjectQ and OpenFermion-ProjectQ
   python -m pip install -e .
 
 Library install
-------------
+---------------
 
 To install the latest PyPI releases as libraries (in user mode):
 
