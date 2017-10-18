@@ -182,18 +182,13 @@ def _direct_graph_swap(cmd, qubit_graph):
                              WeakQubitRef(engine,
                                           qubit_graph.nodes[pair[1]].value))
 
-    # Perform original gate
-    if len(cmd.control_qubits) > 0:
-        projectq.ops.C(gate) | (projectq.types.
-                                WeakQubitRef(engine,
-                                             qubit_graph.
-                                             nodes[graph_path[-2]].value),
-                                total_qubits[1])
-    else:
-        gate | (projectq.types.
-                WeakQubitRef(engine,
-                             qubit_graph.nodes[graph_path[-2]].value),
-                total_qubits[1])
+    # Perform original gate - assumes use of standard ProjectQ rule set that
+    # only ends with 2-qubit gates with controls. Swaps decomposed to CX
+    projectq.ops.C(gate) | (projectq.types.
+                            WeakQubitRef(engine,
+                                         qubit_graph.
+                                         nodes[graph_path[-2]].value),
+                            total_qubits[1])
 
     # Reverse the swaps to put qubits back in place
     for pair in reversed(swap_path):

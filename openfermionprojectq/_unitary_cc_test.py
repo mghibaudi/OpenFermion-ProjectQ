@@ -124,7 +124,6 @@ class UnitaryCC(unittest.TestCase):
         projectq.ops.Swap | (wavefunction[0], wavefunction[3])
         projectq.ops.Swap | (wavefunction[0], wavefunction[3])
         compiler_engine.flush()
-
         energy = compiler_engine.backend.get_expectation_value(hamiltonian,
                                                                wavefunction)
         All(Measure) | wavefunction
