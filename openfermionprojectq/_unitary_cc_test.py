@@ -101,7 +101,8 @@ class UnitaryCC(unittest.TestCase):
 
         # Create a star graph of 4 qubits, all connected through qubit 0
         qubit_graph = Graph()
-        compiler_engine = uccsd_trotter_engine(qubit_graph=qubit_graph)
+        compiler_engine = uccsd_trotter_engine(qubit_graph=qubit_graph,
+                                               opt_size=3)
         wavefunction = compiler_engine.allocate_qureg(4)
         for i in range(4):
             qubit_graph.add_node(Node(value=wavefunction[i].id))
@@ -113,6 +114,15 @@ class UnitaryCC(unittest.TestCase):
             X | wavefunction[i]
         evolution_operator = uccsd_singlet_evolution(test_amplitudes, 4, 2)
         evolution_operator | wavefunction
+        compiler_engine.flush()
+
+        energy = compiler_engine.backend.get_expectation_value(hamiltonian,
+                                                               wavefunction)
+        self.assertAlmostEqual(energy, -1.13727017463)
+
+        # Check swap only with non-adjacent qubits functions without error
+        projectq.ops.Swap | (wavefunction[0], wavefunction[3])
+        projectq.ops.Swap | (wavefunction[0], wavefunction[3])
         compiler_engine.flush()
 
         energy = compiler_engine.backend.get_expectation_value(hamiltonian,
