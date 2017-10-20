@@ -85,13 +85,20 @@ How to cite
 ===========
 When using OpenFermion-ProjectQ for research projects, please cite:
 
-    J. McClean, I. Kivlichan, D. Steiger, Y. Cao, E. Fried, C. Gidney,
-    T. Haener, V. Havlicek, Z. Jiang, M. Neeley, J. Romero, N. Rubin,
-    N. Sawaya, K. Setia, S. Sim, W. Sun, K. Sung and R. Babbush.
+    Jarrod R. McClean, Ian D. Kivlichan, Damian S. Steiger, Yudong Cao, E.
+    Schuyler Fried, Craig Gidney, Thomas Häner, Vojtĕch Havlíček,
+    Zhang Jiang, Matthew Neeley, Jhonathan Romero, Nicholas Rubin, Nicolas P. D.
+    Sawaya, Kanav Setia, Sukin Sim, Wei Sun, Kevin Sung and Ryan Babbush.
     *OpenFermion: The Electronic Structure Package for Quantum Computers*.
     arXiv preprint. 2017.
 
-We are happy to include future contributors as authors on later releases.
+as well as
+
+    Damian S. Steiger, Thomas Häner and Matthias Troyer.
+    *ProjectQ: An Open Source Software Framework for Quantum Computing*.
+    `arXiv preprint: 1612.08091 <https://arxiv.org/abs/1612.08091>`__. 2016.
+
+We are happy to include future contributors as authors on later OpenFermion releases.
 
 Disclaimer
 ==========
