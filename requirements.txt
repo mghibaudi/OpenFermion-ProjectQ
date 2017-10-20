@@ -1,2 +1,2 @@
-openfermion>=0.1a4
+openfermion>=0.1
 projectq>=0.3.5
