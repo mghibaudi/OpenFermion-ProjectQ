@@ -46,7 +46,7 @@ To install the latest PyPI releases as libraries (in user mode):
 
 .. code-block:: bash
 
-  python -m pip install --pre --user openfermionprojectq
+  python -m pip install --user openfermionprojectq
 
 How to contribute
 =================
@@ -81,10 +81,24 @@ Authors
 `Thomas Haener <https://github.com/thomashaener>`__ (ETH Zurich) and
 `Dave Bacon <https://github.com/dabacon>`__ (Google).
 
-Questions?
-==========
+How to cite
+===========
+When using OpenFermion-ProjectQ for research projects, please cite:
 
-If you have any other questions, please contact help@openfermion.org.
+    Jarrod R. McClean, Ian D. Kivlichan, Damian S. Steiger, Yudong Cao, E.
+    Schuyler Fried, Craig Gidney, Thomas Häner, Vojtĕch Havlíček,
+    Zhang Jiang, Matthew Neeley, Jhonathan Romero, Nicholas Rubin, Nicolas P. D.
+    Sawaya, Kanav Setia, Sukin Sim, Wei Sun, Kevin Sung and Ryan Babbush.
+    *OpenFermion: The Electronic Structure Package for Quantum Computers*.
+    arXiv preprint. 2017.
+
+as well as
+
+    Damian S. Steiger, Thomas Häner and Matthias Troyer.
+    *ProjectQ: An Open Source Software Framework for Quantum Computing*.
+    `arXiv preprint: 1612.08091 <https://arxiv.org/abs/1612.08091>`__. 2016.
+
+We are happy to include future contributors as authors on later OpenFermion releases.
 
 Disclaimer
 ==========
