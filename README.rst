@@ -96,7 +96,7 @@ as well as
 
     Damian S. Steiger, Thomas Häner and Matthias Troyer.
     *ProjectQ: An Open Source Software Framework for Quantum Computing*.
-    `arXiv preprint: 1612.08091 <https://arxiv.org/abs/1612.08091>`__. 2016.
+    `arXiv:1612.08091 <https://arxiv.org/abs/1612.08091>`__. 2016.
 
 We are happy to include future contributors as authors on later OpenFermion releases.
 
