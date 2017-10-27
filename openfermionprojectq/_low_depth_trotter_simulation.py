@@ -60,11 +60,13 @@ def special_F_adjacent(register, qubit_index, xx_yy_angle, zz_angle):
     """
     Rx(numpy.pi / 2.) | register[qubit_index]
     CNOT | (register[qubit_index], register[qubit_index + 1])
-    Rx(xx_yy_angle) | register[qubit_index]
-    Ry(xx_yy_angle) | register[qubit_index + 1]
+    if numpy.abs(xx_yy_angle) > 0.0:
+        Rx(xx_yy_angle) | register[qubit_index]
+        Ry(xx_yy_angle) | register[qubit_index + 1]
     CNOT | (register[qubit_index + 1], register[qubit_index])
     Rx(-numpy.pi / 2.) | register[qubit_index + 1]
-    Rz(zz_angle) | register[qubit_index + 1]
+    if numpy.abs(zz_angle) > 0.0:
+        Rz(zz_angle) | register[qubit_index + 1]
     Sdag | register[qubit_index + 1]
     CNOT | (register[qubit_index], register[qubit_index + 1])
     S | register[qubit_index]
@@ -78,8 +80,8 @@ def simulation_gate_trotter_step(register, hamiltonian, input_ordering=None,
 
     Args:
         register (projectq.QuReg): The register to apply the unitary to.
-        n_dimensions (int): The number of dimensions in the system.
-        system_size (int): The side length along each dimension.
+        hamiltonian (QubitOperator): Qubit operator representing the problem
+            in the plane-wave dual basis.
         input_ordering (list): The input Jordan-Wigner ordering.
         first_order (bool): Whether to apply a first or second-order
                             Trotter step.
@@ -129,9 +131,10 @@ def simulation_gate_trotter_step(register, hamiltonian, input_ordering=None,
 
             special_F_adjacent(register, i, xx_yy_angle, zz_angle)
             # The single-Z rotation angle is the opposite of the ZZ angle.
-            Rz(-zz_angle) | register[i]
-            Rz(-zz_angle) | register[i + 1]
-            Ph(-zz_angle / 2.) | register[0]
+            if numpy.abs(zz_angle) > 0.0:
+                Rz(-zz_angle) | register[i]
+                Rz(-zz_angle) | register[i + 1]
+                Ph(-zz_angle / 2.) | register[0]
 
             num_operator_left = ((input_ordering[i], 1),
                                  (input_ordering[i], 0))
@@ -147,8 +150,9 @@ def simulation_gate_trotter_step(register, hamiltonian, input_ordering=None,
                     z_angle /= 2.
                 # After special_F_adjacent, qubits i and i+1 have swapped;
                 # the ith rotation must thus be applied to qubit i+1.
-                Rz(z_angle) | register[i + 1]
-                Ph(z_angle / 2.) | register[0]
+                if numpy.abs(z_angle) > 0.0:
+                    Rz(z_angle) | register[i + 1]
+                    Ph(z_angle / 2.) | register[0]
 
             num_operator_right = ((input_ordering[i+1], 1),
                                   (input_ordering[i+1], 0))
@@ -164,8 +168,9 @@ def simulation_gate_trotter_step(register, hamiltonian, input_ordering=None,
                     z_angle /= 2
                 # After special_F_adjacent, qubits i and i+1 have swapped;
                 # the (i+1)th rotation must thus be applied to qubit i.
-                Rz(z_angle) | register[i]
-                Ph(z_angle / 2.) | register[0]
+                if numpy.abs(z_angle) > 0.0:
+                    Rz(z_angle) | register[i]
+                    Ph(z_angle / 2.) | register[0]
 
             # Finally, swap the two modes in input_ordering.
             input_ordering[i], input_ordering[i + 1] = (input_ordering[i + 1],
