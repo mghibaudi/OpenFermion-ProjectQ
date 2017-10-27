@@ -80,7 +80,7 @@ def simulation_gate_trotter_step(register, hamiltonian, input_ordering=None,
 
     Args:
         register (projectq.QuReg): The register to apply the unitary to.
-        hamiltonian(QubitOperator): Qubit operator representing the problem
+        hamiltonian (QubitOperator): Qubit operator representing the problem
             in the plane-wave dual basis.
         input_ordering (list): The input Jordan-Wigner ordering.
         first_order (bool): Whether to apply a first or second-order
