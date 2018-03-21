@@ -104,9 +104,7 @@ def _identify_non_commuting(cmd):
             for other in hamiltonian.terms:
                 other_op = (QubitOperator(other, hamiltonian.terms[other]))
                 commutator = test_op * other_op - other_op * test_op
-                if not commutator.isclose(id_op,
-                                          rel_tol=1e-9,
-                                          abs_tol=1e-9):
+                if not commutator == id_op:
                     return True
     return False
 
