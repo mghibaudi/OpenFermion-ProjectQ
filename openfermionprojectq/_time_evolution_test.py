@@ -30,7 +30,7 @@ def test_time_evolution_init_int_time(coefficient):
     hamiltonian = coefficient * QubitOperator("X0 Z1")
     hamiltonian += QubitOperator("Z2", 0.5)
     gate1 = te.TimeEvolution(2, hamiltonian)
-    assert gate1.hamiltonian == hamiltonian
+    assert gate1.hamiltonian.isclose(hamiltonian)
     assert gate1.time == 2
 
 
@@ -39,7 +39,7 @@ def test_init_float_time(coefficient):
     hamiltonian = coefficient * QubitOperator("X0 Z1")
     hamiltonian += QubitOperator("Z2", 0.5)
     gate2 = te.TimeEvolution(2.1, hamiltonian)
-    assert gate2.hamiltonian == hamiltonian
+    assert gate2.hamiltonian.isclose(hamiltonian)
     assert gate2.time == pytest.approx(2.1)
 
 
@@ -68,9 +68,9 @@ def test_get_inverse():
     gate = te.TimeEvolution(2, hamiltonian)
     inverse = gate.get_inverse()
     assert gate.time == 2
-    assert gate.hamiltonian == hamiltonian
+    assert gate.hamiltonian.isclose(hamiltonian)
     assert inverse.time == -2
-    assert inverse.hamiltonian == hamiltonian
+    assert inverse.hamiltonian.isclose(hamiltonian)
 
 
 def test_get_merged_one_term():
@@ -81,7 +81,7 @@ def test_get_merged_one_term():
     merged = gate.get_merged(gate2)
     # This is not a requirement, the hamiltonian could also be the other
     # if we change implementation
-    assert merged.hamiltonian == hamiltonian
+    assert merged.hamiltonian.isclose(hamiltonian)
     assert merged.time == pytest.approx(12)
 
 
@@ -95,7 +95,7 @@ def test_get_merged_multiple_terms():
     merged = gate.get_merged(gate2)
     # This is not a requirement, the hamiltonian could also be the other
     # if we change implementation
-    assert merged.hamiltonian == hamiltonian
+    assert merged.hamiltonian.isclose(hamiltonian)
     assert merged.time == pytest.approx(12)
 
 
@@ -136,12 +136,12 @@ def test_or_one_qubit():
     te.TimeEvolution(3, hamiltonian) | (qubit[0],)
     eng.flush()
     cmd1 = saving_backend.received_commands[1]
-    assert cmd1.gate.hamiltonian == hamiltonian
+    assert cmd1.gate.hamiltonian.isclose(hamiltonian)
     assert cmd1.gate.time == pytest.approx(2.1)
     assert len(cmd1.qubits) == 1 and len(cmd1.qubits[0]) == 1
     assert cmd1.qubits[0][0].id == qubit[0].id
     cmd2 = saving_backend.received_commands[2]
-    assert cmd2.gate.hamiltonian == hamiltonian
+    assert cmd2.gate.hamiltonian.isclose(hamiltonian)
     assert cmd2.gate.time == pytest.approx(3)
     assert len(cmd2.qubits) == 1 and len(cmd2.qubits[0]) == 1
     assert cmd2.qubits[0][0].id == qubit[0].id
@@ -157,13 +157,13 @@ def test_or_one_qureg():
     eng.flush()
     rescaled_h = QubitOperator("X0 Z1", 2)
     cmd1 = saving_backend.received_commands[5]
-    assert cmd1.gate.hamiltonian == rescaled_h
+    assert cmd1.gate.hamiltonian.isclose(rescaled_h)
     assert cmd1.gate.time == pytest.approx(2.1)
     assert len(cmd1.qubits) == 1 and len(cmd1.qubits[0]) == 2
     assert cmd1.qubits[0][0].id == qureg[0].id
     assert cmd1.qubits[0][1].id == qureg[4].id
     cmd2 = saving_backend.received_commands[6]
-    assert cmd2.gate.hamiltonian == rescaled_h
+    assert cmd2.gate.hamiltonian.isclose(rescaled_h)
     assert cmd2.gate.time == pytest.approx(3)
     assert len(cmd2.qubits) == 1 and len(cmd2.qubits[0]) == 2
     assert cmd2.qubits[0][0].id == qureg[0].id
@@ -209,7 +209,7 @@ def test_or_multiple_terms():
     rescaled_h = QubitOperator("X0 Z2", 2)
     rescaled_h += QubitOperator("Y1", 0.5)
     cmd1 = saving_backend.received_commands[4]
-    assert cmd1.gate.hamiltonian == rescaled_h
+    assert cmd1.gate.hamiltonian.isclose(rescaled_h)
     assert cmd1.gate.time == pytest.approx(2.1)
     assert len(cmd1.qubits) == 1 and len(cmd1.qubits[0]) == 3
     assert cmd1.qubits[0][0].id == qureg[0].id
@@ -227,7 +227,7 @@ def test_or_gate_not_mutated():
     gate = te.TimeEvolution(2.1, hamiltonian)
     gate | qureg
     eng.flush()
-    assert gate.hamiltonian == correct_h
+    assert gate.hamiltonian.isclose(correct_h)
     assert gate.time == pytest.approx(2.1)
 
 
