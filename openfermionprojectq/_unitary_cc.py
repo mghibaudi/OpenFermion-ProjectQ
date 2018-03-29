@@ -15,7 +15,7 @@
 from openfermionprojectq import TimeEvolution
 from openfermion.ops import FermionOperator, QubitOperator
 from openfermion.transforms import jordan_wigner
-from openfermion.utils import (uccsd_operator, uccsd_singlet_operator,
+from openfermion.utils import (uccsd_generator, uccsd_singlet_generator,
                                uccsd_singlet_paramsize)
 
 import projectq
@@ -71,9 +71,9 @@ def uccsd_singlet_evolution(packed_amplitudes, n_qubits, n_electrons,
             that constructs the UCCSD singlet state.
     """
     # Build UCCSD generator
-    fermion_generator = uccsd_singlet_operator(packed_amplitudes,
-                                               n_qubits,
-                                               n_electrons)
+    fermion_generator = uccsd_singlet_generator(packed_amplitudes,
+                                                n_qubits,
+                                                n_electrons)
 
     evolution_operator = uccsd_evolution(fermion_generator,
                                          fermion_transform)
@@ -104,9 +104,7 @@ def _identify_non_commuting(cmd):
             for other in hamiltonian.terms:
                 other_op = (QubitOperator(other, hamiltonian.terms[other]))
                 commutator = test_op * other_op - other_op * test_op
-                if not commutator.isclose(id_op,
-                                          rel_tol=1e-9,
-                                          abs_tol=1e-9):
+                if not commutator == id_op:
                     return True
     return False
 

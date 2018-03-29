@@ -485,8 +485,7 @@ class SwapAdjacentFermionicModesTest(unittest.TestCase):
         operator = normal_ordered(FermionOperator('2^ 2 4^ 4'))
         operator_swapped = swap_adjacent_fermionic_modes(operator, 2)
 
-        self.assertTrue(operator_swapped.isclose(
-            FermionOperator('4^ 3^ 4 3', -1.0)))
+        self.assertTrue(operator_swapped == FermionOperator('4^ 3^ 4 3', -1.0))
 
 
 class FFFTPlaneWaveIntegrationTest(unittest.TestCase):
