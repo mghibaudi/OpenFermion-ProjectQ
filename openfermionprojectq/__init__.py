@@ -12,8 +12,8 @@
 
 from ._graph import Graph, Node
 from ._time_evolution import TimeEvolution
-from ._unitary_cc import (uccsd_operator,
+from ._unitary_cc import (uccsd_generator,
                           uccsd_singlet_evolution,
                           uccsd_trotter_engine,
-                          uccsd_singlet_operator,
+                          uccsd_singlet_generator,
                           uccsd_singlet_paramsize)
