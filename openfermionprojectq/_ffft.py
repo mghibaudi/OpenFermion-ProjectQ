@@ -5,10 +5,9 @@ import numpy
 from openfermionprojectq import TimeEvolution
 from openfermionprojectq._parallel_bubble_sort import (
     index_of_position_in_1d_array, parallel_bubble_sort)
-from openfermion.ops import (FermionOperator, normal_ordered,
-                             QubitOperator)
+from openfermion.ops import FermionOperator, QubitOperator
 from openfermion.transforms import jordan_wigner
-from openfermion.utils import fourier_transform, Grid
+from openfermion.utils import fourier_transform, Grid, normal_ordered
 
 from projectq import MainEngine
 from projectq.ops import (H, X, Y, Z, C, Rx, Ry, Rz, Ph, Swap,

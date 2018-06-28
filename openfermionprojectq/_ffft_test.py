@@ -12,11 +12,10 @@ from openfermionprojectq._ffft import (
     operator_2d_fft_with_reordering)
 
 from openfermion.hamiltonians import jellium_model
-from openfermion.ops import (FermionOperator, normal_ordered,
-                             QubitOperator)
+from openfermion.ops import FermionOperator, QubitOperator
 from openfermion.transforms import jordan_wigner
 from openfermion.utils import (count_qubits, eigenspectrum,
-                               fourier_transform, Grid)
+                               fourier_transform, Grid, normal_ordered)
 
 from projectq import MainEngine
 from projectq.ops import (H, X, Y, Z, C, Rx, Ry, Rz, Swap, Ph,
