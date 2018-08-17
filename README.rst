@@ -1,9 +1,6 @@
-====================
-OpenFermion-ProjectQ
-====================
-
-.. image:: https://travis-ci.org/quantumlib/OpenFermion-ProjectQ.svg?branch=master
-    :target: https://travis-ci.org/quantumlib/OpenFermion-ProjectQ
+=================================
+OpenFermion-ProjectQ (Deprecated)
+=================================
 
 .. image:: https://coveralls.io/repos/github/quantumlib/OpenFermion-ProjectQ/badge.svg?branch=master
     :target: https://coveralls.io/github/quantumlib/OpenFermion-ProjectQ?branch=develop
@@ -19,6 +16,8 @@ OpenFermion-ProjectQ
 
 `OpenFermion <http://openfermion.org>`_ is an open source package for compiling and analyzing quantum algorithms that simulate fermionic systems.
 This plugin library allows the circuit simulation and compilation package `ProjectQ <https://projectq.ch>`_ to interface with OpenFermion.
+However, OpenFermion-ProjectQ is now archived and deprecated since it is NO LONGER MAINTAINED.
+If you are interested in maintaining the package and qualified to do so, please contact us.
 
 Getting started
 ===============
@@ -51,25 +50,9 @@ To install the latest PyPI releases as libraries (in user mode):
 How to contribute
 =================
 
-We'd love to accept your contributions and patches to OpenFermion-ProjectQ.
-There are a few guidelines you need to follow.
-Contributions to OpenFermion-ProjectQ must be accompanied by a Contributor License Agreement.
-You (or your employer) retain the copyright to your contribution,
-this simply gives us permission to use and redistribute your contributions as part of the project.
-Head over to https://cla.developers.google.com/
-to see your current agreements on file or to sign a new one.
-
-All submissions, including submissions by project members, require review.
-We use GitHub pull requests for this purpose. Consult
-`GitHub Help <https://help.github.com/articles/about-pull-requests/>`__ for
-more information on using pull requests.
-Furthermore, please make sure your new code comes with extensive tests!
-We use automatic testing to make sure all pull requests pass tests and do not
-decrease overall test coverage by too much. Make sure you adhere to our style
-guide. Just have a look at our code for clues. We mostly follow
-`PEP 8 <https://www.python.org/dev/peps/pep-0008/>`_ and use
-the corresponding `linter <https://pypi.python.org/pypi/pep8>`_ to check for it.
-Code should always come with documentation.
+This package is deprecated and no longer accepting contributions.
+However, if you are interested in maintaining the package and qualified to do so, please contact us.
+We would be happy to transfer the repository to responsible owners if there is interest in continuing development.
 
 Authors
 =======
