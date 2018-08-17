@@ -1,9 +1,6 @@
-====================
-OpenFermion-ProjectQ
-====================
-
-.. image:: https://travis-ci.org/quantumlib/OpenFermion-ProjectQ.svg?branch=master
-    :target: https://travis-ci.org/quantumlib/OpenFermion-ProjectQ
+=================================
+OpenFermion-ProjectQ (Deprecated)
+=================================
 
 .. image:: https://coveralls.io/repos/github/quantumlib/OpenFermion-ProjectQ/badge.svg?branch=master
     :target: https://coveralls.io/github/quantumlib/OpenFermion-ProjectQ?branch=develop
@@ -19,6 +16,8 @@ OpenFermion-ProjectQ
 
 `OpenFermion <http://openfermion.org>`_ is an open source package for compiling and analyzing quantum algorithms that simulate fermionic systems.
 This plugin library allows the circuit simulation and compilation package `ProjectQ <https://projectq.ch>`_ to interface with OpenFermion.
+However, OpenFermion-ProjectQ is now archived and deprecated since it is NO LONGER MAINTAINED.
+If you are interested in maintaining the package and qualified to do so, please contact us.
 
 Getting started
 ===============
